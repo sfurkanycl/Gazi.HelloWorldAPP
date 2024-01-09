@@ -304,39 +304,107 @@ namespace Gazi.DongulerApp
 
 
            Random rnd = new Random();
-            int number = rnd.Next(10);
+            int number;
             int sayac = 0;
             Console.WriteLine("Select level");
             int level = int.Parse(Console.ReadLine());
+            int point = 100;
             if (level==1)
             {
-                Console.WriteLine("The first level");
-            }        
-            while (true)
-            {
-                Console.WriteLine("Guess the number");
-                int user = int.Parse(Console.ReadLine());
-                if (user == number )
+                Console.WriteLine("The first level 0-10");
+                number = rnd.Next(10);
+                while (true)
                 {
-                    Console.WriteLine("You won");
-                    break;
+                    Console.WriteLine("Guess the number");
+                    int user = int.Parse(Console.ReadLine());
+                    if (user == number)
+                    {
+                        Console.WriteLine("You won");
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Wrong number! Try again! Remaining Right: " + (5 - sayac));
+                        Console.WriteLine(point);
+                        Console.ReadKey();
+                        Console.Clear();
+                        point -= 5;
+                    }
+                    sayac++;
+                    if (sayac >= 5)
+                    {
+                        Console.WriteLine("Game Over!");
+                        break;
+                    }
+
+
                 }
-                else
-                {
-                    Console.WriteLine("Wrong number! Try again! Remaining Right: " + (5 - sayac));
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-                sayac++;
-                if (sayac>=5)
-                {
-                    Console.WriteLine("Game Over!");
-                    break;
-                }
-                    
-              
             }
+            if (level==2)
+            {
+                Console.WriteLine("The second level 0-30");
+                number = rnd.Next(30);
+                while (true)
+                {
+                    Console.WriteLine("Guess the number");
+                    int user = int.Parse(Console.ReadLine());
+                    if (user == number)
+                    {
+                        Console.WriteLine("You won");
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Wrong number! Try again! Remaining Right: " + (3 - sayac));
+                        Console.WriteLine(point);
+                        Console.ReadKey();
+                        Console.Clear();
+                        point -= 20;
+                    }
+                    sayac++;
+                    if (sayac >= 3)
+                    {
+                        Console.WriteLine("Game Over!");
+                        break;
+                    }
+
+
+                }
+            }
+            if (level==3)
+            {
+                Console.WriteLine("The thırd level 0-50");
+                number = rnd.Next(50);
+                while (true)
+                {
+                    Console.WriteLine("Guess the number");
+                    int user = int.Parse(Console.ReadLine());
+                    if (user == number)
+                    {
+                        Console.WriteLine("You won");
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Wrong number! Try again! Remaining Right: " + (1 - sayac));
+                        Console.WriteLine(point);
+                        Console.ReadKey();
+                        Console.Clear();
+                        point -= 30;
+                    }
+                    sayac++;
+                    if (sayac >= 1)
+                    {
+                        Console.WriteLine("Game Over!");
+                        break;
+                    }
+
+
+                }
+            }
+
            
+
 
 
 
